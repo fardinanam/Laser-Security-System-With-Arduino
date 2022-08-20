@@ -3,6 +3,8 @@
 #define LDRIN 3
 #define LDRIN2 2
 #define MILLISPERBIT 200
+#define LDR_SWITCH_1 5
+#define LDR_SWITCH_2 6
 
 #include <GPRS_Shield_Arduino.h>
 #include <SoftwareSerial.h>
@@ -20,6 +22,8 @@ GPRS gprs(PIN_TX, PIN_RX, BAUDRATE); //RX,TX,PWR,BaudRate
 long int lastChangeTimeOfLdr1;
 long int lastChangeTimeOfLdr2;
 bool buttonPressed;
+bool sensor_button_on_1 = true;
+bool sensor_button_on_2 = true;
 
 void ldr1Interrupt() {
 //  Serial.println("ldr changed");
@@ -71,6 +75,8 @@ void setup() {
   
   Serial.begin(9600);
   pinMode(LED, OUTPUT);
+  pinMode(LDR_SWITCH_1 , INPUT);
+  pinMode(LDR_SWITCH_1 , INPUT);
   
   // enabling pins for interrupt
 //  pciSetup(15);
@@ -80,6 +86,7 @@ void setup() {
   lastChangeTimeOfLdr1 = millis();
   lastChangeTimeOfLdr2 = millis();
   buttonPressed = false;
+  
 }
 
 
@@ -87,8 +94,11 @@ void setup() {
 void loop() {
   long int timeElapsed1 = (millis() - lastChangeTimeOfLdr1);
   long int timeElapsed2 = (millis() - lastChangeTimeOfLdr2);
-  if(timeElapsed1 >= 300 || timeElapsed2 >= 300) Serial.println("WHY----------------");
-  if(timeElapsed1 > (MILLISPERBIT + 100) || timeElapsed2 > (MILLISPERBIT + 100)) {
+//  if(timeElapsed1 >= 300 || timeElapsed2 >= 300) Serial.println("WHY----------------");
+  if((digitalRead(LDR_SWITCH_1) && (timeElapsed1 > (MILLISPERBIT + 100))) || (digitalRead(LDR_SWITCH_2) && (timeElapsed2 > (MILLISPERBIT + 100)))) {
     alarm();
   }
+  //sensor_button_on_1
+  //if(digitalRead(LDR_SWITCH_1)) sensor_button_on_1=!sensor_button_on_1;
+  //if(digitalRead(LDR_SWITCH_2)) sensor_button_on_2=!sensor_button_on_2;
 }
