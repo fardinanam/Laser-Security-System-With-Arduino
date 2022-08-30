@@ -64,9 +64,11 @@ The alarm can be turned off by pressing the push button on the Arduino. There ar
 Every unit of the alarm system has two LDR sensors, which means one unit can secure two edges of the boundary. So a total of 2 units are required to secure a boundary of rectangular shape.
 The same is the case for the laser unit. See the image below for a better understanding.
 
+![schematic diagram](Images/laser_security_system_schematic_diagram.jpg)
+
 ## Problems faced and how we have solved them
 
 ## Contributors
 - [Fardin Anam Aungon](https://github.com/fardinanam)
 - [Kazi Ababil Azam](https://github.com/ababiltalha)
-- [Sumaiya Sultana Any]()
+- [Sumaiya Sultana Any](https://github.com/SumaiyaAny)
