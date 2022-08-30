@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This is a simple project to control a laser security system with an Arduino. The laser is controlled by an ATmega32 which enables the laser to blink at a certain rate. This laser is sensed by an LDR sensor from the other end and detects the rate at which the laser blinks. The LDR sensor is connected to the Arduino which controls the alarm system. Whenever someone interrupts the laser, the Arduino does the following:
+This is a simple project to control a laser security system with Arduino. The laser is controlled by an ATmega32 which enables the laser to blink at a certain rate. This laser is sensed by an LDR sensor from the other end and detects the rate at which the laser blinks. The LDR sensor is connected to the Arduino which controls the alarm system. Whenever someone interrupts the laser, the Arduino does the following:
 - Turns the buzzer on
 - Turns the red light on
 - Sends an SMS to the owner
@@ -31,7 +31,7 @@ The alarm can be turned off by pressing the push button on the Arduino. There ar
 - [Microchip Studio](https://www.microchip.com/en-us/tools-resources/develop/microchip-studio)
 - [Extreme burner](https://extreme-burner-avr.software.informer.com/download/)
 
-### Setting up Arduino
+### Setting up the alarm unit
 - Download the project.
 - Open the Arduino IDE, connect your Arduino to your computer and upload the sketch [laser_security_system.ino](https://github.com/fardinanam/Laser-Security-System-With-Arduino/blob/main/alarm_unit/laser_security_system.ino).
 - Now connect the following components to the Arduino as follows:
@@ -48,7 +48,7 @@ The alarm can be turned off by pressing the push button on the Arduino. There ar
 
     ![alarm system](Images/laser_security_system_arduino_unit.jpg)
 
-### Setting up the lasers
+### Setting up the laser unit
 - Open Microchip studio and open [laser_unit.cproj](https://github.com/fardinanam/Laser-Security-System-With-Arduino/blob/main/laser_unit/laser_unit/laser_unit.cproj).
 - Build the project.
 - Connect an ATmega32 using a USBASP programmer.
@@ -66,7 +66,11 @@ The same is the case for the laser unit. See the image below for a better unders
 
 ![schematic diagram](Images/laser_security_system_schematic_diagram.jpg)
 
-## Problems faced and how we have solved them
+## Problems faced and how we solved them
+
+- The GSM needs a current supply of 2A continuously. A battery is not enough to power the GSM. So, we had to use a power adapter or a power bank that can supply 2A continuously.
+- The LDR sensor is too small. It is difficult to exactly point the laser to the LDR sensor from a long distance. So we have used a glass that can convege light (like the one in a torch light) to the LDR sensor.
+- It is not possible to detect the exact timing of the laser's blink by the Arduino. Because there is a delay caused by the LDR and also in executing the code. We have seen that there is an error of 10-100ms. So, we had to use an error factor of 100ms while making a decision whether there is a breach or not.
 
 ## Contributors
 - [Fardin Anam Aungon](https://github.com/fardinanam)
