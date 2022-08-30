@@ -11,7 +11,7 @@ This is a simple project to control a laser security system with an Arduino. The
 The alarm can be turned off by pressing the push button on the Arduino. There are switches to turn off the security of any specific edge of the boundary.
 
 ## How to reconstruct the project
-### Required Hardware (One unit)
+### Required Hardwares (One unit)
 - Arduino (Recommended - Arduino Uno)
 - ATmega32
 - GSM module (Recommended - SIM900)
@@ -26,7 +26,7 @@ The alarm can be turned off by pressing the push button on the Arduino. There ar
 - USB cable
 - Wires
 
-### Required Software
+### Required Softwares
 - [Arduino IDE](https://www.arduino.cc/en/software)
 - [Microchip Studio](https://www.microchip.com/en-us/tools-resources/develop/microchip-studio)
 - [Extreme burner](https://extreme-burner-avr.software.informer.com/download/)
@@ -46,7 +46,7 @@ The alarm can be turned off by pressing the push button on the Arduino. There ar
 
         `Note`: The GSM module requires the current supply to be 2A. So, an appropriate power adapter is required.
 
-    ![alarm system](Images\laser_security_system_arduino_unit.jpg)
+    ![alarm system](Images/laser_security_system_arduino_unit.jpg)
 
 ### Setting up the lasers
 - Open Microchip studio and open [laser_unit.cproj](https://github.com/fardinanam/Laser-Security-System-With-Arduino/blob/main/laser_unit/laser_unit/laser_unit.cproj).
@@ -58,11 +58,11 @@ The alarm can be turned off by pressing the push button on the Arduino. There ar
     - It is recommended to use an adapter to power the ATmega32 as the security system should be turned on all the time. So connect the `pin 10 (VCC)` of the ATmega32 to the `VCC` of the adapter and the `pin 11 (GND)` of the ATmega32 to the `GND` of the adapter.
     - The positive `+` ends of the laser to ATmega32's `pin 40 (A0)` and `pin 39 (A1)`. And the negative `-` ends to the ground of the power system.
 
-    ![laser unit](Images\laser_security_system_laser_unit.jpg)
+    ![laser unit](Images/laser_security_system_laser_unit.jpg)
 
 ## How to use the project
 Every unit of the alarm system has two LDR sensors, which means one unit can secure two edges of the boundary. So a total of 2 units are required to secure a boundary of rectangular shape.
-The same is the case for the laser unit.
+The same is the case for the laser unit. See the image below for a better understanding.
 
 ## Problems faced and how we have solved them
 
