@@ -8,7 +8,7 @@ This is a simple project to control a laser security system with Arduino. The la
 - Sends an SMS to the owner
 - Calls the owner
 
-The alarm can be turned off by pressing the push button on the Arduino. There are switches to turn off the security of any specific edge of the boundary.
+The alarm can be turned off by pressing the push button on the Arduino. There are switches to turn off the security of any specific edge of the boundary. Watch the dmonstration of the project [here](https://youtu.be/q3XVyX2HZ3A).
 
 ## How to reconstruct the project
 ### Required Hardwares (One unit)
