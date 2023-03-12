@@ -11,7 +11,7 @@ This is a simple project to control a laser security system with Arduino. The la
 The alarm can be turned off by pressing the push button on the Arduino. There are switches to turn off the security of any specific edge of the boundary. Watch the demonstration of the project [here](https://youtu.be/q3XVyX2HZ3A).
 
 ## How to reconstruct the project
-### Required Hardwares (One unit)
+### Required Hardwares (One Unit)
 - Arduino (Recommended - Arduino Uno)
 - ATmega32
 - GSM module (Recommended - SIM900)
